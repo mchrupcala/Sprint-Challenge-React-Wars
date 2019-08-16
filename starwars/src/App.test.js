@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import App from "./App.css";
-import { render, wait } from "react-testing-library";
-import "react-testing-library/cleanup-after-each";
+import { render, wait } from "@testing-library/react";
 import { Item } from "semantic-ui-react";
 
 const test1 = [
@@ -54,8 +53,20 @@ const test1 = [
   }
 ];
 
+// const newString = test1[0].name;
+// console.log(newString);
+
 describe("App", () => {
   it("gets text", () => {
-    const { getsByText } = render(<App test1={test1} />);
+    const { container } = render(<App name={peopleData.name} />);
   });
 });
+
+//////////////////////////////////////////////////////////////////////
+//Dummy Code for confirming the test works for this file.
+// const sum = require("./sum");
+
+// test("adds 1 + 2 to equal 3", () => {
+//   expect(sum(1, 2)).toBe(3);
+// });
+//////////////////////////////////////////////////////////////////////
