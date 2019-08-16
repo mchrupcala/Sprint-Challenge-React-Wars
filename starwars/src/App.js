@@ -29,9 +29,16 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {peopleData.map(item => (
-        <NewCharacter name={item.name} />
-      ))}
+      <div className="ui cards">
+        {peopleData.map(item => (
+          <NewCharacter
+            name={item.name}
+            eyes={item.eye_color}
+            hair={item.hair_color}
+            mass={item.mass}
+          />
+        ))}
+      </div>
     </div>
   );
 };
